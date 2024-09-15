@@ -1,0 +1,410 @@
+<html></html>
+<head>
+    <title>Healthcare Professionals Network</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Custom styles for the hamburger menu */
+        .hamburger-menu {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+            }
+            .nav-links.active {
+                display: block;
+            }
+        }
+
+        /* Custom styles for the dropdown menu */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #2d3748;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 16px;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background-color: #4a5568;
+        }
+
+        /* Custom styles for the sub-dropdown menu */
+        .sub-dropdown:hover .sub-dropdown-menu {
+            display: block;
+        }
+        .sub-dropdown-menu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #2d3748;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .sub-dropdown-menu a {
+            display: block;
+            padding: 8px 16px;
+            color: white;
+            text-decoration: none;
+        }
+        .sub-dropdown-menu a:hover {
+            background-color: #4a5568;
+        }
+
+        /* Custom styles for the news ticker */
+        .news-ticker {
+            overflow: hidden;
+            position: relative;
+        }
+        .news-ticker-inner {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        .news-article {
+            flex: 0 0 25%;
+            box-sizing: border-box;
+            padding: 0 1rem;
+        }
+
+        /* Custom styles for the informative section */
+        .informative-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .informative-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .informative-item img, .informative-item i {
+            width: 100px;
+            height: 100px;
+            margin-right: 1rem;
+        }
+        .informative-item div {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 px-4 md:px-0">
+            <h1 class="text-xl font-bold">Healthcare Professionals Network</h1>
+            <nav>
+                <div class="hamburger-menu md:hidden">
+                    <button id="hamburger-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <ul id="nav-links" class="nav-links flex space-x-4 md:flex md:space-x-4 relative">
+                    <li>
+                        <a href="#" class="hover:underline flex flex-col items-center">
+                            <i class="fas fa-home mb-1"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="hover:underline flex flex-col items-center">
+                            <i class="fas fa-pencil-alt mb-1"></i>
+                            Blog
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="sub-dropdown">
+                                <a href="#">Medical</a>
+                                <div class="sub-dropdown-menu">
+                                    <a href="#">Pharma</a>
+                                    <a href="#">Neuro</a>
+                                    <a href="#">Cardiology</a>
+                                    <a href="#">Oncology</a>
+                                    <a href="#">Pediatrics</a>
+                                </div>
+                            </div>
+                            <div class="sub-dropdown">
+                                <a href="#">Healthcare</a>
+                                <div class="sub-dropdown-menu">
+                                    <a href="#">Public Health</a>
+                                    <a href="#">Nursing</a>
+                                    <a href="#">Health Policy</a>
+                                    <a href="#">Mental Health</a>
+                                    <a href="#">Nutrition</a>
+                                </div>
+                            </div>
+                            <div class="sub-dropdown">
+                                <a href="#">Engineering</a>
+                                <div class="sub-dropdown-menu">
+                                    <a href="#">Biomedical</a>
+                                    <a href="#">Mechanical</a>
+                                    <a href="#">Electrical</a>
+                                    <a href="#">Civil</a>
+                                    <a href="#">Software</a>
+                                </div>
+                            </div>
+                            <div class="sub-dropdown">
+                                <a href="#">Biotechnology</a>
+                                <div class="sub-dropdown-menu">
+                                    <a href="#">Genetics</a>
+                                    <a href="#">Microbiology</a>
+                                    <a href="#">Biochemistry</a>
+                                    <a href="#">Bioinformatics</a>
+                                    <a href="#">Molecular Biology</a>
+                                </div>
+                            </div>
+                            <div class="sub-dropdown">
+                                <a href="#">Nation</a>
+                                <div class="sub-dropdown-menu">
+                                    <a href="#">Politics</a>
+                                    <a href="#">Economy</a>
+                                    <a href="#">Education</a>
+                                    <a href="#">Healthcare</a>
+                                    <a href="#">Environment</a>
+                                </div>
+                            </div>
+                            <div class="sub-dropdown">
+                                <a href="#">International</a>
+                                <div class="sub-dropdown-menu">
+                                    <a href="#">Global Politics</a>
+                                    <a href="#">Trade</a>
+                                    <a href="#">Diplomacy</a>
+                                    <a href="#">International Law</a>
+                                    <a href="#">Human Rights</a>
+                                </div>
+                            </div>
+                            <div class="sub-dropdown">
+                                <a href="#">Technology</a>
+                                <div class="sub-dropdown-menu">
+                                    <a href="#">AI</a>
+                                    <a href="#">Blockchain</a>
+                                    <a href="#">Cybersecurity</a>
+                                    <a href="#">Software Development</a>
+                                    <a href="#">Gadgets</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline flex flex-col items-center">
+                            <i class="fas fa-graduation-cap mb-1"></i>
+                            MedLearn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline flex flex-col items-center">
+                            <i class="fas fa-user-plus mb-1"></i>
+                            Sign Up
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline flex flex-col items-center">
+                            <i class="fas fa-sign-in-alt mb-1"></i>
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 text-white text-center py-16 px-4 md:px-0">
+            <h2 class="text-3xl font-bold">Welcome to the Healthcare Network</h2>
+            <p class="mt-4">Join thousands of doctors and healthcare professionals in connecting and sharing knowledge.</p>
+            <button class="mt-6 bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">Sign Up Now</button>
+        </section>
+        <section class="container mx-auto py-16 px-4 md:px-0 space-y-8">
+            <!-- Latest Medical Blogs -->
+            <div class="bg-gray-800 shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4">Latest Medical Blogs</h3>
+                <div id="blogs-container" class="news-ticker">
+                    <div class="news-ticker-inner">
+                        <!-- Blog articles will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+            <!-- Informative Section -->
+            <div class="bg-gray-800 shadow-md rounded-lg p-6 informative-section">
+                <div class="informative-item">
+                    <i class="fas fa-book-medical fa-3x text-blue-500"></i>
+                    <div>
+                        <a class="font-bold text-lg hover:underline" href="#">Exclusive Medical Content</a>
+                        <p>Gain access to a vast library of medical content and research papers that are exclusive to our members. Imagine a girl diligently writing a research paper and handing it over to her professor for review.</p>
+                    </div>
+                </div>
+                <div class="informative-item">
+                    <i class="fas fa-users fa-3x text-green-500"></i>
+                    <div>
+                        <a class="font-bold text-lg hover:underline" href="#">Global Healthcare Network</a>
+                        <p>Join a global network of healthcare professionals and expand your professional connections. Picture healthcare professionals from different parts of the world connecting and collaborating.</p>
+                    </div>
+                </div>
+                <div class="informative-item">
+                    <i class="fas fa-briefcase-medical fa-3x text-red-500"></i>
+                    <div>
+                        <a class="font-bold text-lg hover:underline" href="#">Personalized Job Recommendations</a>
+                        <p>Receive personalized job recommendations tailored to your skills and career goals in the medical field. Envision a personalized job recommendation system that matches your unique skills and aspirations.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Medical News Section -->
+            <div class="bg-gray-800 shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4">Medical News</h3>
+                <div id="news-container" class="news-ticker">
+                    <div class="news-ticker-inner">
+                        <!-- News articles will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+            <!-- Free Space for Future Content -->
+            <div class="bg-gray-800 shadow-md rounded-lg p-6 h-64 flex items-center justify-center">
+                <p class="text-gray-400">Free space for future content</p>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>Contact | Help | Company Info</p>
+            <p>Founders: Aashish Rana, Raghav Sharma, Tushar Rhatta</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('hamburger-button').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+
+        document.querySelector('a[href="#"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            const isLoggedIn = false; // Change this to true if the user is logged in
+            if (isLoggedIn) {
+                window.location.href = 'medlearn.html'; // Replace with the actual URL of the MedLearn page
+            } else {
+                alert('Login required');
+            }
+        });
+
+        // Replace with your API key
+        const apiKey = '4ac6a8ced42b43cd87ce40ec403048c3';
+
+        // Set the API endpoint URL for medical news
+        const newsUrl = `https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${apiKey}`;
+
+        // Set the API endpoint URL for medical blogs
+        const blogsUrl = `https://newsapi.org/v2/everything?q=medical&apiKey=${apiKey}`;
+
+        // Function to fetch and display news articles
+        function fetchAndDisplayNews() {
+            fetch(newsUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const articles = data.articles; // Get all articles
+                    const newsContainer = document.querySelector('#news-container .news-ticker-inner');
+                    articles.forEach(article => {
+                        const newsArticle = document.createElement('div');
+                        newsArticle.classList.add('news-article', 'bg-gray-700', 'p-4', 'rounded-lg', 'mx-2');
+                        newsArticle.innerHTML = `
+                            <h2 class="text-lg font-bold">${article.title}</h2>
+                            <p>${article.description}</p>
+                            <a href="${article.url}" target="_blank" class="text-blue-500 hover:underline">Read more</a>
+                        `;
+                        newsContainer.appendChild(newsArticle);
+                    });
+
+                    // Duplicate the articles to create a continuous loop
+                    articles.forEach(article => {
+                        const newsArticle = document.createElement('div');
+                        newsArticle.classList.add('news-article', 'bg-gray-700', 'p-4', 'rounded-lg', 'mx-2');
+                        newsArticle.innerHTML = `
+                            <h2 class="text-lg font-bold">${article.title}</h2>
+                            <p>${article.description}</p>
+                            <a href="${article.url}" target="_blank" class="text-blue-500 hover:underline">Read more</a>
+                        `;
+                        newsContainer.appendChild(newsArticle);
+                    });
+
+                    // Set the initial position of the ticker
+                    let position = 0;
+
+                    // Function to move the ticker
+                    function moveTicker() {
+                        position -= 25; // Move by one article width
+                        if (position <= -100) {
+                            position = 0; // Reset position
+                        }
+                        newsContainer.style.transform = `translateX(${position}%)`;
+                    }
+
+                    // Move the ticker every 3 seconds
+                    setInterval(moveTicker, 3000);
+                })
+                .catch(error => console.error(error));
+        }
+
+        // Function to fetch and display blog articles
+        function fetchAndDisplayBlogs() {
+            fetch(blogsUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const articles = data.articles; // Get all articles
+                    const blogsContainer = document.querySelector('#blogs-container .news-ticker-inner');
+                    articles.forEach(article => {
+                        const blogArticle = document.createElement('div');
+                        blogArticle.classList.add('news-article', 'bg-gray-700', 'p-4', 'rounded-lg', 'mx-2');
+                        blogArticle.innerHTML = `
+                            <h2 class="text-lg font-bold">${article.title}</h2>
+                            <p>${article.description}</p>
+                            <a href="${article.url}" target="_blank" class="text-blue-500 hover:underline">Read more</a>
+                        `;
+                        blogsContainer.appendChild(blogArticle);
+                    });
+
+                    // Duplicate the articles to create a continuous loop
+                    articles.forEach(article => {
+                        const blogArticle = document.createElement('div');
+                        blogArticle.classList.add('news-article', 'bg-gray-700', 'p-4', 'rounded-lg', 'mx-2');
+                        blogArticle.innerHTML = `
+                            <h2 class="text-lg font-bold">${article.title}</h2>
+                            <p>${article.description}</p>
+                            <a href="${article.url}" target="_blank" class="text-blue-500 hover:underline">Read more</a>
+                        `;
+                        blogsContainer.appendChild(blogArticle);
+                    });
+
+                    // Set the initial position of the ticker
+                    let position = 0;
+
+                    // Function to move the ticker
+                    function moveTicker() {
+                        position -= 25; // Move by one article width
+                        if (position <= -100) {
+                            position = 0; // Reset position
+                        }
+                        blogsContainer.style.transform = `translateX(${position}%)`;
+                    }
+
+                    // Move the ticker every 3 seconds
+                    setInterval(moveTicker, 3000);
+                })
+                .catch(error => console.error(error));
+        }
+
+        // Fetch and display news and blogs on page load
+        fetchAndDisplayNews();
+        fetchAndDisplayBlogs();
+    </script>
+</body>
+</html>
